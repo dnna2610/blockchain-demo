@@ -1,0 +1,47 @@
+<template name="MainLayout">
+    <div class="ui attached borderless labeled icon menu">
+        <div class="ui container">
+            <a class="item" href="/">
+                Blockchain Simulation
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="ui container">
+        <div class="field inline">
+            <select id="in_device" class="ui compact selection dropdown">
+                <option selected value="1">Device 1</option>
+                <option value="2">Device 2</option>
+                <option value="3">Device 3</option>
+                <option value="4">Device 4</option>
+                <option value="5">Device 5</option>
+                <option value="6">Device 6</option>
+            </select>
+            <div id="btn_change_device" class="ui basic green button">Go</div>
+        </div>
+        
+        {{#if Template.subscriptionsReady}}         
+            {{#each blocks}}
+                <div class="ui segment">
+                    <h1>Device {{device}} - Block {{block_number}}</h1>
+                    <p>From: {{from}}. To: {{to}}. Amount: {{amount}}</p>
+                    <p>Previous hash: {{previous_hash}}</p>
+                    <p>Nounce: {{nounce}}. <strong>Hash: </strong>{{hash}}</p>
+                </div>
+            {{else}}
+                <h1>There is no block currently.</h1>
+            {{/each}}
+            <div class="six ui buttons">
+                <button id="btn_device_1" class="ui button">Device 1</button>
+                <button id="btn_device_2" class="ui button">Device 2</button>
+                <button id="btn_device_3" class="ui button">Device 3</button>
+                <button id="btn_device_4" class="ui button">Device 4</button>
+                <button id="btn_device_5" class="ui button">Device 5</button>
+                <button id="btn_device_6" class="ui button">Device 6</button>
+            </div>
+            {{> NewBlock device=1 count=block_count prev=last_hash}}
+        {{else}}
+            <h1>loading...</h1>
+        {{/if}}
+    </div>
+</template>

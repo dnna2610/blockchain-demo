@@ -1,0 +1,42 @@
+<template name="NewBlock">
+    <div class="ui segment">
+        <div id="dimmer_mine" class="ui dimmer">
+            <div class="ui indeterminate text loader">Checking for Validity</div>
+        </div>
+        <div class="ui form">
+            <form id="new_block">
+                <input type="hidden" id="in_device" name="device" value="{{device}}" />
+                <input type="hidden" id="in_count" name="count" value="{{count}}" />
+                <input type="hidden" id="in_prev" name="prev_hash" value="{{prev}}" />
+                <div class="fields">
+                    <div class="inline field">
+                        <label>Nounce</label>
+                        <input placeholder="Nounce" value="1" name="nounce" id="txt_nounce" type="text">
+                    </div>
+                    <div class="inline field">
+                        <label>From</label>
+                        <input placeholder="Anh" name="from" id="txt_from" type="text">
+                    </div>
+                    <div class="inline field">
+                        <label>To</label>
+                        <input placeholder="Sam" name="to" id="txt_to" type="text">
+                    </div>
+                    <div class="inline field">
+                        <label>Amount</label>
+                        <div class="ui labeled input">
+                            <div class="ui label">$</div>
+                            <input placeholder="Data" name="amount" id="txt_amount" type="text">
+                        </div>
+                    </div>
+                    <div id="btn_hash" class="ui basic green button">Mine</div>
+                </div>
+                <label>Hash: </label>
+                <div id="txt_hash"></div>
+                <div id="btn_submit" class="ui positive right labeled icon button">
+                    Confirm Transaction
+                    <i class="checkmark icon"></i>
+                </div>
+            </form>
+        </div>
+    </div>
+</template>

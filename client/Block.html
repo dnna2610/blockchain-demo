@@ -1,0 +1,30 @@
+<template name="Block">
+    <div class="ui segment">
+        <div class="ui form">
+            <div class="fields">
+                <div class="inline field">
+                    <label>Nounce</label>
+                    <input placeholder="Nounce" value="1" name="nounce" id="txt_nounce" type="text">
+                </div>
+                <div class="inline field">
+                    <label>From</label>
+                    <input placeholder="Anh" name="from" id="txt_from" type="text">
+                </div>
+                <div class="inline field">
+                    <label>To</label>
+                    <input placeholder="Sam" name="to" id="txt_to" type="text">
+                </div>
+                <div class="inline field">
+                    <label>Amount</label>
+                    <div class="ui labeled input">
+                        <div class="ui label">$</div>
+                        <input placeholder="Data" name="amount" id="txt_amount" type="text">
+                    </div>
+                </div>
+                <div id="btn_mine" class="ui basic green button">Mine</div>
+            </div>
+            Hash:
+            <div id="txt_hash"></div>
+        </div>
+    </div>
+</template>
