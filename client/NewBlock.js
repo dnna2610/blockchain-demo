@@ -20,6 +20,11 @@ Template.NewBlock.events({
         $(".ui.dimmer").removeClass("active");
     },
     'click #btn_submit': function (event, template) {
+        for (var i = 1; i < 7; i++) {
+            var btn_str = '#btn_device_'+ i.toString();
+            $(btn_str).removeClass("positive");
+            $(btn_str).removeClass("negative");
+        }
         $(".ui.dimmer").addClass("active");
         var from_str = $('#txt_from').val();
         var from_int = parseInt(from_str);
